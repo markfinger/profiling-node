@@ -21,17 +21,17 @@ profiler.startProfiling('1', true);
 // ...
 
 // Stop the profiler
-const profile1 = profiler.stopProfiling();
+const profile = profiler.stopProfiling();
 
 // Export the profiler's data as JSON
-profile1.export(function(err, result) {
+profile.export(function(err, result) {
   if (err) throw err;
   
   // Dump the data to a timestamped file in the current working directory
-  fs.writeFileSync(+new Date() + '.cpuprofile', result);
+  fs.writeFileSync((new Date()).getTime() + '.cpuprofile', result);
   
   // Cleanup
-  profile1.delete();
+  profile.delete();
 });
 ```
 
