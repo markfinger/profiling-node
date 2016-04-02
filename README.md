@@ -8,6 +8,7 @@ npm install --save v8-profiler
 ```
 
 ```js
+const fs = require('fs');
 const profiler = require('v8-profiler');
 
 // run your init stuff
